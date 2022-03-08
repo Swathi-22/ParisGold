@@ -9,9 +9,9 @@
   <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!--====== Title ======-->
-  <title> Laramiss Home Page One </title>
+  <title>ParisGold </title>
   <!--====== Favicon Icon ======-->
-  <link rel="shortcut icon" href="{% static 'web/img/favicon.ico' %}" type="img/png" />
+  <link rel="shortcut icon" href="{% static 'web/img/favicon.png' %}" type="img/png" />
   <!--====== Animate Css ======-->
   <link rel="stylesheet" href="{% static 'web/css/animate.min.css' %}">
   <!--====== Bootstrap css ======-->
@@ -41,10 +41,16 @@
 </head>
 
 <body>
+  <div class="preloader">
+    <img src="{% static  'web/img/paris gold white logo.png' %}" alt="">
+    
+  </div>
 
+  {% include 'web/partials/header.html' %}
     {% block content %}
 
     {% endblock %}
+    {% include 'web/partials/footer.html' %}
 
 
  <!--====== jquery js ======-->
