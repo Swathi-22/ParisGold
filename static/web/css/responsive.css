@@ -1,12 +1,55 @@
+
+@media (min-width: 1200px) and (max-width: 1500px){
+    #features {
+        padding-top: 60px;
+    }
+}
+
 @media (min-width: 992px) and (max-width: 1200px) {
     .choose-wrap.pl-100 {
         padding-left: 50px;
     }
+    .choose-btn a {
+        background: transparent linear-gradient(180deg, hsl(46deg 79% 42%), hsl(231deg 41% 16%) 100%) 0% 0% no-repeat padding-box;
+        /* box-shadow: 3px 4px 25px hsl(46deg 79% 42%); */
+        border-radius: 10px;
+        width: 198px;
+        display: inline-block;
+        color: #fff;
+        display: flex;
+        padding: 1px 14px;
+        float: left;
+        margin-right: 16px;
+        position: relative;
+        margin-bottom: 23px;
 }
-@media (max-width: 767px) {
+    
+}
+
+
+    
+
+@media (max-width: 768px) {
     .section-title {
         padding-left: 0;
         padding-right: 0;
     }
+    .choose-btn a {
+        background: transparent linear-gradient(180deg, hsl(46deg 79% 42%), hsl(231deg 41% 16%) 100%) 0% 0% no-repeat padding-box;
+        /* box-shadow: 3px 4px 25px hsl(46deg 79% 42%); */
+        border-radius: 10px;
+        width: 167px;
+        display: inline-block;
+        color: #fff;
+        display: flex;
+        padding: 1px 14px;
+        float: left;
+        margin-right: 16px;
+        position: relative;
+        margin-bottom: 23px;
 }
-
+.choose-btn a .text {
+    z-index: 99;
+    font-size: 13px;
+}
+}

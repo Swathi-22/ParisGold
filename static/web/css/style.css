@@ -176,8 +176,14 @@ ol {
 
 p {
     margin: 0px;
+    text-align: justify;
 }
-
+.feature-p{
+    font-size: 16px;
+}
+.features-a{
+    font-size: 28px;
+}
 a {
     -webkit-transition: all 0.3s ease-out 0s;
     transition: all 0.3s ease-out 0s;
@@ -471,7 +477,7 @@ select {
 }
 
 .section-title h2 {
-    font-size: 70px;
+    font-size: 66px;
     line-height: 1.125;
     letter-spacing: -1px;
 }
@@ -11855,3 +11861,49 @@ footer .copyright-area.light-theme .footer-menu ul li::before {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+.choose-btn a {
+    background: transparent linear-gradient(180deg, hsl(46deg 79% 42%), hsl(231deg 41% 16%) 100%) 0% 0% no-repeat padding-box;
+    /* box-shadow: 3px 4px 25px hsl(46deg 79% 42%); */
+    border-radius: 10px;
+    width: 241px;
+    display: inline-block;
+    color: #fff;
+    display: flex;
+    padding: 10px 30px;
+    float: left;
+    margin-right: 25px;
+    position: relative;
+}
+
+element.style {
+    background-image: url(img/shape/header-sape4.png);
+    background-position: right center;
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+.g-btn::before {
+    content: "";
+    position: absolute;
+    height: 98%;
+    width: 99.1%;
+    background: #fff;
+    left: 1px;
+    top: 1px;
+    border-radius: 9px;
+}
+.choose-btn a .icon {
+    padding: 0 20px 0 0;
+    line-height: 50px;
+    z-index: 99;
+}
+.choose-btn a .text {
+    z-index: 99;
+    font-size: 18px;
+}
+.g-btn .text {
+    color: hsl(46deg 79% 42%);
+}
+.gold-row-pad{
+    padding: 100px 30px ;
+}
