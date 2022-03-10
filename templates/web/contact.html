@@ -6,7 +6,7 @@
     <section class="breadcrumb-area" style="background-image: url({% static 'web/img/bg/04.jpg' %});">
         <div class="container">
             <div class="breadcrumb-text">
-                <span>DESIGNER JEWELRY</span>
+                <span>Highgrade Jewels </span>
                 <h2 class="page-title">Contact us</h2>
                 <ul class="breadcrumb-nav">
                     <li><a href="#">Home</a></li>
@@ -61,40 +61,53 @@
             <!-- <div class="contact-maps mb-30" id="map"></div> -->
             <!-- Contact Form -->
             <div class="contact-form">
-                <form class="form_validate ajax_submit form_alert" action="http://metropolitanhost.com/themes/themeforest/html/laramiss/sendmail.php" method="post" enctype="multipart/form-data">
+                <form id="form" class="form_validate ajax_submit form_alert">
                     <div class="row">
+                        {% csrf_token %}
                         <div class="col-md-6">
                             <div class="input-group mb-30">
                                 <span class="icon"><i class="far fa-user"></i></span>
-                                <input type="text" placeholder="Your full name" name="name">
+                                <!-- <input type="text"  placeholder="Your full name" name="name"> -->
+                                {{forms.name}}
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="input-group mb-30">
                                 <span class="icon"><i class="far fa-envelope"></i></span>
-                                <input type="email" placeholder="Enter email address" name="email">
+                                <!-- <input type="email" placeholder="Enter email address" name="email"> -->
+                                {{forms.email}}
+
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="input-group mb-30">
                                 <span class="icon"><i class="far fa-phone"></i></span>
-                                <input type="text" placeholder="Add phone number" name="phone">
+                                <!-- <input type="text" placeholder="Add phone number" name="phone"> -->
+                                {{forms.phone}}
+
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="input-group mb-30">
                                 <span class="icon"><i class="far fa-book"></i></span>
-                                <input type="text" placeholder="Select Subject" name="subject">
+                                <!-- <input type="text" placeholder="Select Subject" name="subject"> -->
+                                {{forms.subject}}
+
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="input-group textarea mb-30">
                                 <span class="icon"><i class="far fa-pen"></i></span>
-                                <textarea placeholder="Enter messages" name="message"></textarea>
+                                <!-- <textarea placeholder="Enter messages" name="message" class="form-textarea"></textarea> -->
+                                {{forms.message}}
+
                             </div>
                         </div>
-                        <div class="col-12 text-center">
-                            <button type="submit" class="main-btn btn-filled">Get Free Quote</button>
+                        <!-- <div class="submit-button col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <input class="btn btn-primary" name="submitMessage" value="Send" type="submit">
+                          </div> -->
+                          <div class="col-12 text-center">
+                            <button type="submit" class="main-btn btn-filled" value="Send">Send</button>
                             <div class="server_response w-100"></div>
                         </div>
                     </div>
@@ -104,6 +117,7 @@
     </section>
     <!--====== CONTACT PART END ======-->
     <!--====== INSTAGRAM FEED PART START ======-->
+    {% comment %}
     <div class="instagram-feed-section">
         <div class="container-fluid p-0">
             <div class="instagram-slider">
@@ -170,12 +184,14 @@
             </div>
         </div>
     </div>
+    {% endcomment %}
     <!--====== INSTAGRAM FEED PART END ======-->
     <!--====== Back to Top ======-->
     <a href="#" class="back-to-top" id="backToTop">
         <i class="fal fa-angle-double-up"></i>
     </a>
     <!--====== FOOTER PART START ======-->
+    {% comment %}
     <footer>
         <div class="footer-subscibe-area pt-120 pb-120">
             <div class="container">
@@ -217,17 +233,18 @@
             </div>
         </div> -->
     </footer>
+    {% endcomment %}
     <!--====== FOOTER PART END ======-->
     <!--====== Modal Popup Start ======-->
     <!-- The Modal -->
-    <div class="modal fade on-load-modal" id="myModal">
+    <!-- <div class="modal fade on-load-modal" id="myModal">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content" style="background-image: url({% static 'web/img/popup.jpg' %})">
-                <!-- Modal Header -->
+                Modal Header
                 <div class="modal-header">
                     <button type="button" class="close popup-trigger" data-dismiss="modal">&times;</button>
                 </div>
-                <!-- Modal body -->
+                Modal body
                 <div class="modal-body">
                     <div class="modal-inner">
                         <h3 class="title">Newsletter</h3>
@@ -240,5 +257,13 @@
                 </div>
             </div>
         </div>
-    </div>
-   {% endblock %}
+    </div> -->
+  
+
+    
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  
+    {% endblock %}
+ 
+
+

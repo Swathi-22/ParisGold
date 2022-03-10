@@ -6,7 +6,7 @@
     <section class="breadcrumb-area" style="background-image: url({% static 'web/img/bg/04.jpg' %});">
         <div class="container">
             <div class="breadcrumb-text">
-                <span>DESIGNER JEWELRY</span>
+                <span>Highgrade Jewels </span>
                 <h2 class="page-title">News Details</h2>
                 <ul class="breadcrumb-nav">
                     <li><a href="#">Home</a></li>
@@ -23,37 +23,28 @@
                 <div class="col-lg-8">
                     <div class="news-details-box">
                         <div class="entry-content">
-                            <a href="#" class="cat">Businese</a>
-                            <h2 class="title">How to Shop For Jewelry When You Have a Metal Allergy. </h2>
+                            <!-- <a href="#" class="cat">Businese</a> -->
+                            <h2 class="title">{{updates.title}}</h2>
                             <ul class="post-meta">
-                                <li><a href="#"><i class="fal fa-user"></i>by Piklo D. Sindom</a></li>
-                                <li><a href="#"><i class="fal fa-calendar-alt"></i>24th March 2022</a></li>
-                                <li><a href="#"><i class="fal fa-comments"></i>35 Comments</a></li>
+                                
+                                <li><a href="#"><i class="fal fa-calendar-alt"></i>{{updates.date|date:"d F Y"}}</a></li>
+                               
                             </ul>
                             <p class="mb-30">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                                mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit
-                                voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-                                inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
-                                ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-                                magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui
-                                dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
-                                eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                                {{updates.content|safe}}
                             </p>
-                            <p>
+                            <!-- <p>
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                                 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
                                 dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                                 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
-                            </p>
+                            </p> -->
+                           
                             <figure class="mt-45 mb-45">
-                                <img src="{% static 'web/img/blog-details/01.jpg' %}" alt="Image">
+                                <img src=" {{updates.image.crop.670x260}}" alt="Image">
                             </figure>
+                            {% comment %}
                             <h3 class="subtitle"> How Are Colored Diamonds Formed?</h3>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
@@ -289,6 +280,7 @@
                         </div>
                     </div>
                 </div>
+                {% endcomment %}
                 {% comment %}
                 <!-- Blog Sidebar -->
                 <div class="col-lg-4 col-md-8 col-sm-10">
@@ -455,6 +447,7 @@
     </section>
     <!--====== BLOG SECTION END ======-->
     <!--====== INSTAGRAM FEED PART START ======-->
+    {% comment %}
     <div class="instagram-feed-section">
         <div class="container-fluid p-0">
             <div class="instagram-slider">
@@ -521,12 +514,14 @@
             </div>
         </div>
     </div>
+    {% endcomment %}
     <!--====== INSTAGRAM FEED PART END ======-->
     <!--====== Back to Top ======-->
     <a href="#" class="back-to-top" id="backToTop">
         <i class="fal fa-angle-double-up"></i>
     </a>
     <!--====== FOOTER PART START ======-->
+    {% comment %}
     <footer>
         <div class="footer-subscibe-area pt-120 pb-120">
             <div class="container">
@@ -567,18 +562,19 @@
             </div>
         </div>
     </footer>
+    {% endcomment %}
     <!--====== FOOTER PART END ======-->
 
     <!--====== Modal Popup Start ======-->
     <!-- The Modal -->
-    <div class="modal fade on-load-modal" id="myModal">
+    <!-- <div class="modal fade on-load-modal" id="myModal">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content" style="background-image: url({% static 'web/img/popup.jpg' %})">
-          <!-- Modal Header -->
+          Modal Header
           <div class="modal-header">
             <button type="button" class="close popup-trigger" data-dismiss="modal">&times;</button>
           </div>
-          <!-- Modal body -->
+          Modal body
           <div class="modal-body">
             <div class="modal-inner">
               <h3 class="title">Newsletter</h3>
@@ -593,5 +589,5 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     {% endblock %}

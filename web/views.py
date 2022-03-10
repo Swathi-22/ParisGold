@@ -1,17 +1,27 @@
 from importlib.resources import contents
-from django.shortcuts import render
+from django.shortcuts import render,HttpResponse, get_object_or_404
+from .forms import ContactForm
+from .models import Gallery,Update
+import json
+from django.http import JsonResponse
 
+ 
 # Create your views here.
 def index(request):
-    context = {
+    updates=Update.objects.all()
 
+    context = {
+        "updates":updates
     }
     return render(request,'web/index.html',context)
 
 
 def about(request):
+    gallery = Gallery.objects.all()
+    updates=Update.objects.all()
     context = {
-
+        "gallery":gallery,
+        "updates":updates
     }
     return render(request,'web/about.html',context)
 
@@ -31,28 +41,47 @@ def diamond(request):
 
 
 def blog(request):
-    context = {
+    updates=Update.objects.all()
+    context={
+      
+        "updates":updates,
 
     }
     return render(request,'web/blog.html',context)
 
 
-def blogDetails(request):
-    context = {
-
+def blogDetails(request,slug):
+    updates = get_object_or_404(Update,slug=slug)
+    
+    context={
+        'updates':updates,
+        
     }
     return render(request,'web/blog-details.html',context)
 
-
 def gallery(request):
-    context = {
+    gallery = Gallery.objects.all()
+    context={
+        "gallery":gallery
 
     }
     return render(request,'web/gallery.html',context)
 
 
 def contact(request):
-    context = {
+    forms=ContactForm(request.POST or None)
+    context={
+        'forms':forms
 
     }
     return render(request,'web/contact.html',context)
+
+def SaveContactForm(request):
+    print(request.POST)
+    forms=ContactForm(request.POST or None)
+    if request.method=='POST':
+        print('success')
+        if forms.is_valid():
+            forms.save()
+           
+    return JsonResponse({'title':'y'})

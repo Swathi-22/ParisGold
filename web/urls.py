@@ -10,7 +10,9 @@ urlpatterns = [
     path('gold/', views.gold,name='gold'),
     path('diamond/', views.diamond,name='diamond'),
     path('blog/', views.blog,name='blog'),
-    path('blog-details/', views.blogDetails,name='blogDetails'),
+    path('blog-details/<str:slug>/', views.blogDetails,name='blogDetails'),
     path('gallery/', views.gallery,name='gallery'),
     path('contact/', views.contact,name='contact'),
+    path('SaveContactForm/', views.SaveContactForm,name='SaveContactForm'),
+    
 ]

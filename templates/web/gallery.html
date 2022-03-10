@@ -6,7 +6,7 @@
     <section class="breadcrumb-area" style="background-image: url({% static 'web/img/bg/04.jpg' %});">
         <div class="container">
             <div class="breadcrumb-text">
-                <span>DESIGNER JEWELRY</span>
+                <span>Highgrade Jewels </span>
                 <h2 class="page-title">Gallery</h2>
                 <ul class="breadcrumb-nav">
                     <li><a href="#">Home</a></li>
@@ -19,22 +19,23 @@
     <!--====== GALLERY START ======-->
     <div class="gallery-wrappper pt-120 pb-120">
         <div class="container">
-            <div class="gallery-loop">
-                <div class="single-gallery-image wow fadeInUp" data-wow-delay=".3s">
-                    <a href="{% static 'web/img/gallery/01.jpg' %}" class="popup-image">
-                        <img src="{% static 'web/img/gallery/01.jpg' %}" alt="Images">
-                    </a>
+            <div class="">
+                <div class="row">
+                    {% for galleries in gallery %}
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="single-gallery-image wow fadeInUp" data-wow-delay=".3s">
+                            <a href="{{galleries.image.url}}" class="popup-image">
+                                <img src="{{galleries.image.crop.555x438}}" alt="Images">
+                            </a>
+                        </div>
+                    </div>
+                    {% endfor %}
                 </div>
-                <div class="single-gallery-image wow fadeInUp" data-wow-delay=".4s">
-                    <a href="{% static 'web/img/gallery/02.jpg' %}" class="popup-image">
-                        <img src="{% static 'web/img/gallery/02.jpg' %}" alt="Images">
-                    </a>
-                </div>
-                <div class="single-gallery-image wow fadeInUp" data-wow-delay=".5s">
-                    <a href="{% static 'web/img/gallery/03.jpg' %}" class="popup-image">
-                        <img src="{% static 'web/img/gallery/03.jpg' %}" alt="Images">
-                    </a>
-                </div>
+                
+              
+
+
+                {% comment %}
                 <div class="single-gallery-image wow fadeInUp" data-wow-delay=".6s">
                     <a href="{% static 'web/img/gallery/04.jpg' %}" class="popup-image">
                         <img src="{% static 'web/img/gallery/04.jpg' %}" alt="Images">
@@ -60,11 +61,13 @@
                         <img src="{% static 'web/img/gallery/08.jpg' %}" alt="Images">
                     </a>
                 </div>
+                {% endcomment %}
             </div>
         </div>
     </div>
     <!--====== GALLERY END ======-->
     <!--====== INSTAGRAM FEED PART START ======-->
+    {% comment %}
     <div class="instagram-feed-section">
         <div class="container-fluid p-0">
             <div class="instagram-slider">
@@ -131,12 +134,14 @@
             </div>
         </div>
     </div>
+    {% endcomment %}
     <!--====== INSTAGRAM FEED PART END ======-->
     <!--====== Back to Top ======-->
     <a href="#" class="back-to-top" id="backToTop">
         <i class="fal fa-angle-double-up"></i>
     </a>
     <!--====== FOOTER PART START ======-->
+    {% comment %}
     <footer>
         <div class="footer-subscibe-area pt-120 pb-120">
             <div class="container">
@@ -178,9 +183,11 @@
             </div>
         </div> -->
     </footer>
+    {% endcomment %}
     <!--====== FOOTER PART END ======-->
 
     <!--====== Modal Popup Start ======-->
+    {% comment %}
     <!-- The Modal -->
     <div class="modal fade on-load-modal" id="myModal">
       <div class="modal-dialog modal-dialog-centered">
@@ -205,4 +212,5 @@
         </div>
       </div>
     </div>
+    {% endcomment %}
   {% endblock %}

@@ -8,7 +8,7 @@
     <section class="breadcrumb-area" style="background-image: url({% static 'web/img/bg/04.jpg' %});">
         <div class="container">
             <div class="breadcrumb-text">
-                <span>DESIGNER JEWELRY</span>
+                <span>Highgrade Jewels </span>
                 <h2 class="page-title">About Us</h2>
                 <ul class="breadcrumb-nav">
                     <li><a href="#">Home</a></li>
@@ -88,6 +88,7 @@
     </section>
     <!--====== ABOUT PART END ======-->
     <!--====== CORE FEATURES START ======-->
+    {% comment %}
     <section class="core-feature-section bg-black pt-115 pb-115">
         <div class="container">
             <div class="section-title white-color text-center mb-50">
@@ -187,6 +188,7 @@
             </div>
         </div>
     </section>
+    {% endcomment %}
     <!--====== CORE FEATURES END ======-->
     <!--====== COUNTER UP START ======-->
     <section class="counter-section pt-115">
@@ -262,26 +264,26 @@
             </div>
             <!-- Latest post loop -->
             <div class="row justify-content-center mt-50">
+                {% for update in updates %}
                 <div class="col-lg-4 col-sm-6">
                     <div class="latest-post-box mt-30">
-                        <div class="post-img" style="background-image: url({% static 'web/img/latest-post/01.jpg' %});"></div>
+                        <div class="post-img" style="background-image: url({{update.image.crop.370x260}});"></div>
                         <div class="post-desc">
                             <ul class="post-meta">
                                 <li>
-                                    <a href="#"><i class="fal fa-calendar-alt"></i>28th Aug 2022</a>
+                                    <a href="#"><i class="fal fa-calendar-alt"></i>{{update.date|date:"d F Y"}}</a>
                                 </li>
-                                <li>
-                                    <a href="#"><i class="fal fa-user"></i>By Admin</a>
-                                </li>
+                               
                             </ul>
-                            <h4><a href="blog-details.html">Ruby on Rose Accessories and Blue Gemstones.</a></h4>
+                            <h4><a href="blog-details.html">{{update.title}}</a></h4>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore.
+                                {{update.summary}}
                             </p>
                         </div>
                     </div>
                 </div>
+                {% endfor %}
+                {% comment %}
                 <div class="col-lg-4 col-sm-6">
                     <div class="latest-post-box mt-30">
                         <div class="post-img" style="background-image: url({% static 'web/img/latest-post/03.jpg' %});"></div>
@@ -322,6 +324,7 @@
                         </div>
                     </div>
                 </div>
+                {% endcomment %}
             </div>
         </div>
     </section>
@@ -330,6 +333,40 @@
     <div class="instagram-feed-section">
         <div class="container-fluid p-0">
             <div class="instagram-slider">
+                {% for galleries in gallery %}
+                <div class="image">
+                    <a href="{{galleries.image.url}}" class="insta-popup">
+                        <img src="{{galleries.image.crop.320x320}}" alt="instagram-feed">
+                    </a>
+                </div>
+                {% endfor %}
+
+                {% comment %}
+                <div class="image">
+                    <a href="{% static 'web/img/instagram/02.jpg' %}" class="insta-popup">
+                        <img src="{% static 'web/img/instagram/02.jpg' %}" alt="instagram-feed">
+                    </a>
+                </div>
+                <div class="image">
+                    <a href="{% static 'web/img/instagram/03.jpg' %}" class="insta-popup">
+                        <img src="{% static 'web/img/instagram/03.jpg' %}" alt="instagram-feed">
+                    </a>
+                </div>
+                <div class="image">
+                    <a href="{% static 'web/img/instagram/04.jpg' %}" class="insta-popup">
+                        <img src="{% static 'web/img/instagram/04.jpg' %}" alt="instagram-feed">
+                    </a>
+                </div>
+                <div class="image">
+                    <a href="{% static 'web/img/instagram/05.jpg' %}" class="insta-popup">
+                        <img src="{% static 'web/img/instagram/05.jpg' %}" alt="instagram-feed">
+                    </a>
+                </div>
+                <div class="image">
+                    <a href="{% static 'web/img/instagram/06.jpg' %}" class="insta-popup">
+                        <img src="{% static 'web/img/instagram/06.jpg' %}" alt="instagram-feed">
+                    </a>
+                </div>
                 <div class="image">
                     <a href="{% static 'web/img/instagram/01.jpg' %}" class="insta-popup">
                         <img src="{% static 'web/img/instagram/01.jpg' %}" alt="instagram-feed">
@@ -360,36 +397,7 @@
                         <img src="{% static 'web/img/instagram/06.jpg' %}" alt="instagram-feed">
                     </a>
                 </div>
-                <div class="image">
-                    <a href="{% static 'web/img/instagram/01.jpg' %}" class="insta-popup">
-                        <img src="{% static 'web/img/instagram/01.jpg' %}" alt="instagram-feed">
-                    </a>
-                </div>
-                <div class="image">
-                    <a href="{% static 'web/img/instagram/02.jpg' %}" class="insta-popup">
-                        <img src="{% static 'web/img/instagram/02.jpg' %}" alt="instagram-feed">
-                    </a>
-                </div>
-                <div class="image">
-                    <a href="{% static 'web/img/instagram/03.jpg' %}" class="insta-popup">
-                        <img src="{% static 'web/img/instagram/03.jpg' %}" alt="instagram-feed">
-                    </a>
-                </div>
-                <div class="image">
-                    <a href="{% static 'web/img/instagram/04.jpg' %}" class="insta-popup">
-                        <img src="{% static 'web/img/instagram/04.jpg' %}" alt="instagram-feed">
-                    </a>
-                </div>
-                <div class="image">
-                    <a href="{% static 'web/img/instagram/05.jpg' %}" class="insta-popup">
-                        <img src="{% static 'web/img/instagram/05.jpg' %}" alt="instagram-feed">
-                    </a>
-                </div>
-                <div class="image">
-                    <a href="{% static 'web/img/instagram/06.jpg' %}" class="insta-popup">
-                        <img src="{% static 'web/img/instagram/06.jpg' %}" alt="instagram-feed">
-                    </a>
-                </div>
+                {% endcomment %}
             </div>
         </div>
     </div>
@@ -399,6 +407,7 @@
         <i class="fal fa-angle-double-up"></i>
     </a>
     <!--====== FOOTER PART START ======-->
+    {% comment %}
     <footer>
         <div class="footer-subscibe-area pt-120 pb-120">
             <div class="container">
@@ -440,6 +449,7 @@
             </div>
         </div> -->
     </footer>
+    {% endcomment %}
     <!--====== FOOTER PART END ======-->
 
     <!--====== Modal Popup Start ======-->
