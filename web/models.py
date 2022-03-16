@@ -9,7 +9,7 @@ from tinymce.models import HTMLField
 class Contact(models.Model):
     name=models.CharField(max_length=100)
     email=models.EmailField()
-    phone=models.IntegerField()
+    phone=models.CharField(max_length=50)
     subject=models.TextField()
     message=HTMLField(blank=True, null=True)
 

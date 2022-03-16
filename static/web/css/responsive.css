@@ -30,6 +30,9 @@
     
 
 @media (max-width: 768px) {
+    .logo-align{
+        text-align: center;
+    }
     .section-title {
         padding-left: 0;
         padding-right: 0;

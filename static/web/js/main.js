@@ -1036,7 +1036,7 @@ var mirandaDoc;
 
 $('#form').submit(function(e){
     var data=$(this).serializeArray();
-    alert(data)
+    console.log(data)
     $.ajax({
         url:"/SaveContactForm/",
         type:'POST',

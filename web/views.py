@@ -1,7 +1,7 @@
 from importlib.resources import contents
 from django.shortcuts import render,HttpResponse, get_object_or_404
 from .forms import ContactForm
-from .models import Gallery,Update
+from .models import Gallery,Update,Contact
 import json
 from django.http import JsonResponse
 
@@ -68,7 +68,7 @@ def gallery(request):
     return render(request,'web/gallery.html',context)
 
 
-def contact(request):
+def contact_form(request):
     forms=ContactForm(request.POST or None)
     context={
         'forms':forms
@@ -77,11 +77,14 @@ def contact(request):
     return render(request,'web/contact.html',context)
 
 def SaveContactForm(request):
-    print(request.POST)
+  
     forms=ContactForm(request.POST or None)
     if request.method=='POST':
+       
         print('success')
         if forms.is_valid():
+           
             forms.save()
+      
            
     return JsonResponse({'title':'y'})
