@@ -6734,6 +6734,7 @@ header.header-three.sigma-header .nav-container .menu-right-buttons .cart-dropdo
 }
 
 .contact-part .contact-info .info-box {
+    height: 205px;
     padding: 50px 45px;
     background-color: #353530;
     display: -ms-grid;
@@ -6745,6 +6746,7 @@ header.header-three.sigma-header .nav-container .menu-right-buttons .cart-dropdo
     margin-bottom: 30px;
     grid-column-gap: 30px;
 }
+
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .contact-part .contact-info .info-box {
@@ -11922,4 +11924,11 @@ element.style {
 }
 .gold-rate-container-bg{
     background-color: #000;
+}
+.color-color{
+    color: #a3a3a3;
+}
+.color-color:hover{
+    color: #a3a3a3;
+
 }
