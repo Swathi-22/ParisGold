@@ -51,10 +51,11 @@ def blog(request):
 
 
 def blogDetails(request,slug):
-    updates = get_object_or_404(Update,slug=slug)
-    
+    update = get_object_or_404(Update,slug=slug)
+    updates=Update.objects.all()
     context={
-        'updates':updates,
+        'update':update,
+        'updates':updates
         
     }
     return render(request,'web/blog-details.html',context)

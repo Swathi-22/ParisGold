@@ -24,14 +24,14 @@
                     <div class="news-details-box">
                         <div class="entry-content">
                             <!-- <a href="#" class="cat">Businese</a> -->
-                            <h2 class="title">{{updates.title}}</h2>
+                            <h2 class="title">{{update.title}}</h2>
                             <ul class="post-meta">
                                 
-                                <li><a href="#"><i class="fal fa-calendar-alt"></i>{{updates.date|date:"d F Y"}}</a></li>
+                                <li><a href="#"><i class="fal fa-calendar-alt"></i>{{update.date|date:"d F Y"}}</a></li>
                                
                             </ul>
                             <p class="mb-30">
-                                {{updates.content|safe}}
+                                {{update.content|safe}}
                             </p>
                             <!-- <p>
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
@@ -42,7 +42,7 @@
                             </p> -->
                            
                             <figure class="mt-45 mb-45">
-                                <img src=" {{updates.image.crop.670x260}}" alt="Image">
+                                <img src=" {{update.image.crop.670x260}}" alt="Image">
                             </figure>
                             {% comment %}
                             <h3 class="subtitle"> How Are Colored Diamonds Formed?</h3>

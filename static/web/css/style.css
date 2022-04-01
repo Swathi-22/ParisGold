@@ -4984,6 +4984,7 @@ header.header-three.sigma-header .nav-container .menu-right-buttons .cart-dropdo
 .latest-news .latest-post-box .post-desc {
     background-color: #353530;
     padding: 40px 35px;
+    height: 287px;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {

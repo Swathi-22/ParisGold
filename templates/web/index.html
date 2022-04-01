@@ -1055,6 +1055,7 @@
     <!-- Latest post loop -->
     <div class="row latest-post-slider mt-80">
       {% for update in updates %}
+
       <div class="col-lg-4">
         <div class="latest-post-box">
           <div class="post-img" style="background-image: url({{update.image.crop.370x260}});"></div>
@@ -1063,17 +1064,19 @@
               <li>
                 <a href="#"><i class="fal fa-calendar-alt"></i>{{update.date|date:"d F Y"}}</a>
               </li>
-              <li>
-                <!-- <a href="#"><i class="fal fa-user"></i>By Admin</a> -->
-              </li>
+              <!-- <li>
+                <a href="#"><i class="fal fa-user"></i>By Admin</a>
+              </li> -->
             </ul>
-            <h4><a href="blog-details.html">{{update.title}}</a></h4>
+            <h4><a href="{% url 'web:blogDetails' update.slug %}">{{update.title}}</a></h4>
             <p>
               {{update.summary}}
             </p>
           </div>
         </div>
       </div>
+
+
       {% endfor %}
       {% comment %}
       <div class="col-lg-4">
